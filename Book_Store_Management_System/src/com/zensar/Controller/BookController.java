@@ -8,7 +8,7 @@ import com.zensar.Repository.BookRepoImpl;
 import com.zensar.Service.BookServiceImplementation;
 import com.zensar.model.Book;
 
-public class BookController {
+public class BookController  {
 	public static void main(String[] args) {
 		BookRepoImpl bookRepo = new BookRepoImpl();
 		BookServiceImplementation bookService = new BookServiceImplementation();
@@ -17,10 +17,15 @@ public class BookController {
 		boolean exit = false;
 		
 		while(!exit) {
+			System.out.println("       ");
+			System.out.println("=============Book Store Database===============");
 			List<Book> testbook = bookRepo.displayBook();
 			for(Book book: testbook) {
 				System.out.println(book);
 			}
+			System.out.println("=============Book Store Database Ends===============");
+			System.out.println("       ");
+			System.out.println("       ");
 			System.out.println("====Menu====");
 			System.out.println("1. Display books in Ascending Order");
 			System.out.println("2. Display books from Old to new as per publish date");
@@ -35,53 +40,97 @@ public class BookController {
 			System.out.println("11. Add new book");
 			System.out.println("12. Exit");
 			System.out.println("Enter your choice: ");
+			
 			int choice = scanner.nextInt();
 			scanner.nextLine();
-			
+			System.out.println("       ");
+			System.out.println("       ");
 			switch (choice) {
 				case 1:
+					System.out.println("==========Operation===========");
+					System.out.println("       ");
 					bookService.displayBooksInAscendingOrder();
+					System.out.println("       ");
+					System.out.println("==========Operation===========");
 					break;
 				case 2:
+					System.out.println("==========Operation===========");
+					System.out.println("       ");
 					bookService.displayBookFromOldToNewAsPerPublishDate();
+					System.out.println("       ");
+					System.out.println("==========Operation===========");
 					break;
 				case 3:
+					System.out.println("==========Operation===========");
+					System.out.println("       ");
 					System.out.println("Enter the title of the book: ");
 					String title = scanner.nextLine();
 					bookService.searchUsingBookTitle(title);
+					System.out.println("       ");
+					System.out.println("==========Operation===========");
 					break;
 				case 4:
+					System.out.println("==========Operation===========");
+					System.out.println("       ");
 					System.out.println("Enter the Author name: ");
 					String author = scanner.nextLine();
 					bookService.searchUsingAuthorName(author);
+					System.out.println("       ");
+					System.out.println("==========Operation===========");
 					break;
 				case 5:
+					System.out.println("==========Operation===========");
+					System.out.println("       ");
 					System.out.println("Enter the language: ");
 					String language = scanner.nextLine();
 					bookService.displayBooksOfParticularLanguage(language);
+					System.out.println("       ");
+					System.out.println("==========Operation===========");
 					break;
 				case 6:
+					System.out.println("==========Operation===========");
+					System.out.println("       ");
 					System.out.println("Enter the category: ");
 					String category = scanner.nextLine();
 					bookService.displayBooksInParticularCategory(category);
+					System.out.println("       ");
+					System.out.println("==========Operation===========");
 					break;
 				case 7:
+					System.out.println("==========Operation===========");
+					System.out.println("       ");
 					bookService.displayTotalBooksInBookStore();
+					System.out.println("       ");
+					System.out.println("==========Operation===========");
 					break;
 				case 8:
+					System.out.println("==========Operation===========");
+					System.out.println("       ");
 					System.out.println("Enter the price range: ");
 					int minPrice = scanner.nextInt();
 					int maxPrice = scanner.nextInt();
 					
 					bookService.displayBooksInParticularPriceRange(minPrice, maxPrice);
+					System.out.println("       ");
+					System.out.println("==========Operation===========");
 					break;
 				case 9:
+					System.out.println("==========Operation===========");
+					System.out.println("       ");
 					bookService.printTotalPriceOfAllBooks();
+					System.out.println("       ");
+					System.out.println("==========Operation===========");
 					break;
 				case 10:
+					System.out.println("==========Operation===========");
+					System.out.println("       ");
 					bookService.printDetailsOfMostExpensiveBook();
+					System.out.println("       ");
+					System.out.println("==========Operation===========");
 					break;
 				case 11:
+					System.out.println("==========Operation===========");
+					System.out.println("       ");
 					System.out.println("Enter the ID of book");
 					int id = scanner.nextInt();
 					scanner.nextLine();
@@ -102,6 +151,8 @@ public class BookController {
 					Book newBook = new Book(id, newTitle, newAuthor, newPrice, publishDate, newLanguage, newCategory);
 					bookRepo.addNewBook(newBook);
 					System.out.println("New book added sucessfully !");
+					System.out.println("       ");
+					System.out.println("==========Operation===========");
 					break;
 				case 12:
 					exit = true;
